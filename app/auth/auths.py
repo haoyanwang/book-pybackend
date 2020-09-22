@@ -46,6 +46,7 @@ class Auth():
         :param password:
         :return: json
         """
+        print(username)
         token = str(self.encode_auth_token(username, login_time), encoding='utf-8')
         return token
 
@@ -61,4 +62,5 @@ class Auth():
             result = common.falseReturn('', '找不到该用户信息')
         else:
             result = common.trueReturn(user[0]['username'], '请求成功')
+        print(result)
         return result
